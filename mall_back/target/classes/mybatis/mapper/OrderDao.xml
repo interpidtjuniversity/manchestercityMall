@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web2020.mall.dao.OrderDao">
+
+    <resultMap type="com.web2020.mall.entity.Order" id="OrderMap">
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="goodid" column="goodId" jdbcType="INTEGER"/>
+        <result property="goodnum" column="goodNum" jdbcType="INTEGER"/>
+        <result property="gooddeliveryplace" column="goodDeliveryPlace" jdbcType="VARCHAR"/>
+        <result property="totalprice" column="totalPrice" jdbcType="INTEGER"/>
+        <result property="orderid" column="orderId" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="OrderMap">
+        select
+          username, goodId, goodNum, goodDeliveryPlace, totalPrice, orderId
+        from web_mall_2020.order
+        where orderId = #{orderid}
+    </select>
+
+
+    <!--查询所有-->
+    <select id="getOrders" resultMap="OrderMap">
+        select
+          username, goodId, goodNum, goodDeliveryPlace, totalPrice, orderId
+        from web_mall_2020.order
+        where username = #{username}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="OrderMap">
+        select
+          username, goodId, goodNum, goodDeliveryPlace, totalPrice, orderId
+        from web_mall_2020.order
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="OrderMap">
+        select
+          username, goodId, goodNum, goodDeliveryPlace, totalPrice, orderId
+        from web_mall_2020.order
+        <where>
+            <if test="username != null and username != ''">
+                and username = #{username}
+            </if>
+            <if test="goodid != null">
+                and goodId = #{goodid}
+            </if>
+            <if test="goodnum != null">
+                and goodNum = #{goodnum}
+            </if>
+            <if test="gooddeliveryplace != null and gooddeliveryplace != ''">
+                and goodDeliveryPlace = #{gooddeliveryplace}
+            </if>
+            <if test="totalprice != null">
+                and totalPrice = #{totalprice}
+            </if>
+            <if test="orderid != null">
+                and orderId = #{orderid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="orderid" useGeneratedKeys="true">
+        insert into web_mall_2020.order(username, goodId, goodNum, goodDeliveryPlace, totalPrice)
+        values (#{username}, #{goodid}, #{goodnum}, #{gooddeliveryplace}, #{totalprice})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update web_mall_2020.order
+        <set>
+            <if test="username != null and username != ''">
+                username = #{username},
+            </if>
+            <if test="goodid != null">
+                goodId = #{goodid},
+            </if>
+            <if test="goodnum != null">
+                goodNum = #{goodnum},
+            </if>
+            <if test="gooddeliveryplace != null and gooddeliveryplace != ''">
+                goodDeliveryPlace = #{gooddeliveryplace},
+            </if>
+            <if test="totalprice != null">
+                totalPrice = #{totalprice},
+            </if>
+        </set>
+        where orderId = #{orderid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from web_mall_2020.order where orderId = #{orderid}
+    </delete>
+
+</mapper>

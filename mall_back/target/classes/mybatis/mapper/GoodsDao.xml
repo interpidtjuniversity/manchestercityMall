@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web2020.mall.dao.GoodsDao">
+
+    <resultMap type="com.web2020.mall.entity.Goods" id="GoodsMap">
+        <result property="goodid" column="goodId" jdbcType="INTEGER"/>
+        <result property="goodname" column="goodName" jdbcType="VARCHAR"/>
+        <result property="goodprice" column="goodPrice" jdbcType="INTEGER"/>
+        <result property="gooddeliveryplace" column="goodDeliveryPlace" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="GoodsMap">
+        select
+          goodId, goodName, goodPrice, goodDeliveryPlace
+        from web_mall_2020.goods
+        where goodId = #{goodid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="GoodsMap">
+        select
+          goodId, goodName, goodPrice, goodDeliveryPlace
+        from web_mall_2020.goods
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="GoodsMap">
+        select
+          goodId, goodName, goodPrice, goodDeliveryPlace
+        from web_mall_2020.goods
+        <where>
+            <if test="goodid != null">
+                and goodId = #{goodid}
+            </if>
+            <if test="goodname != null and goodname != ''">
+                and goodName = #{goodname}
+            </if>
+            <if test="goodprice != null">
+                and goodPrice = #{goodprice}
+            </if>
+            <if test="gooddeliveryplace != null and gooddeliveryplace != ''">
+                and goodDeliveryPlace = #{gooddeliveryplace}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="goodid" useGeneratedKeys="true">
+        insert into web_mall_2020.goods(goodName, goodPrice, goodDeliveryPlace)
+        values (#{goodname}, #{goodprice}, #{gooddeliveryplace})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update web_mall_2020.goods
+        <set>
+            <if test="goodname != null and goodname != ''">
+                goodName = #{goodname},
+            </if>
+            <if test="goodprice != null">
+                goodPrice = #{goodprice},
+            </if>
+            <if test="gooddeliveryplace != null and gooddeliveryplace != ''">
+                goodDeliveryPlace = #{gooddeliveryplace},
+            </if>
+        </set>
+        where goodId = #{goodid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from web_mall_2020.goods where goodId = #{goodid}
+    </delete>
+
+</mapper>
