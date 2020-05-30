@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/carts.css">
+</head>
+<body>
+<section class="cartMain">
+    <div class="cartMain_hd">
+        <ul class="order_lists cartTop">
+            <li class="list_con" style="width: 180px;text-align: left">商品ID</li>
+            <li class="list_con" style="width: 220px">描述</li>
+            <li class="list_con" style="width: 220px;text-align: right">发货地</li>
+            <li class="list_price" style="padding-left: 100px;width: 170px;text-align: center">单价</li>
+            <li class="list_amount" style="width: 160px;text-align: center">数量</li>
+            <li class="list_sum" style="text-align: center;width: 100px">金额</li>
+        </ul>
+    </div>
+
+    <div class="cartBox">
+
+        <div class="order_content" id="order_content_id">
+
+        </div>
+    </div>
+
+    <!--底部-->
+    <div class="bar-wrapper">
+        <div class="bar-right">
+            <div class="piece">已选商品<strong id="piece_num" class="piece_num">0</strong>件</div>
+            <div class="totalMoney">共计: <strong id="total_text" class="total_text">0.00</strong></div>
+            <div id="calBtn" class="calBtn" onclick="cashIn()"><a id="check">结算</a></div>
+            <div id="cancelBtn" class="calBtn" onclick="back()"><a style="color: red" id="back">返回</a></div>
+        </div>
+    </div>
+
+
+
+</section>
+
+<script>
+
+    window.onload = function () {
+        //发送ajax请求
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST","http://47.114.153.37:9999/action/userCart/getCart",true);
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.withCredentials = true;
+        xhr.send(null);
+        xhr.onreadystatechange = function (e) {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText);
+                if(data.opRes === "success"){
+                    //alert(data.dataRes);
+                    if(data.dataResSize>0) {
+                        // 先判断有没有商品
+                        let piece_num = document.getElementById("piece_num");
+                        let total_text = document.getElementById("total_text");
+                        // data 传入的数据
+                        let dataRes = JSON.parse(data.dataRes);
+                        let num = dataRes.length;
+                        let total = 0;
+                        let totalNum = 0;
+                        for(let i = 0;i<num;i++) {
+                            totalNum += dataRes[i]['goodNum'];
+                            total += dataRes[i]['goodPrice']*dataRes[i]['goodNum'];
+                        }
+                        piece_num.innerHTML = totalNum.toString();
+                        total_text.innerHTML = total.toString();
+                        let a = document.getElementById("check");
+                        if(num != 0) {
+                            a.style.color = "red";
+                        }
+                        dataOrder = dataRes;
+                        showCart(dataRes);
+                    }
+                    else{
+                        //购物车空空如也去添加几件商品吧
+                    }
+                }
+                else if(data.opRes === "unauthorized"){
+                    alert("请先登陆!");
+                    window.location.href="login.html";
+                }
+            }
+        };
+    }
+
+</script>
+<script src="./js/carts.js"></script>
+<script src="./js/data.js"></script>
+
+</body>
+</html>

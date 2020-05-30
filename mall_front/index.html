@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang='zh-cmn-cn'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>曼城官方商城同济大学代理</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div id="site-topbar">
+        <div class="container">
+            <div style="padding-left: 950px">
+                <div id="orderInfo">
+                    <a href="javascript:gotoOrder()" style="color:gainsboro">订单中心</a>
+                </div>
+                <div id="shoppingCart" style="padding-left: 22px">
+                    <button id="shoppingCartA" style="height: 40px;background: #333333;border: none;color:gainsboro" onclick="gotoCart()">
+                        <span class="iconfont" style="color:gainsboro">&#xe600;</span>&nbsp;购物车
+                    </button>
+                </div>
+                <div id="userInfo">
+                    <a href="login.html" id="userInfo_userName" style="color:gainsboro">登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="heard">
+        <div class="container">
+            <div id="header-logo" class="heard-item">
+                <a href="https://shop.mancity.com/stores/mancity/en">
+                    <span class="iconfont">&#xe60f;</span>
+                </a>
+
+            </div>
+            <div id="header-nav" class="heard-item">
+                <a href="javascript:void(0);" class="nav-item" data-type="1">套件</a>
+                <a href="javascript:void(0);" class="nav-item" data-type="2">彪马</a>
+                <a href="javascript:void(0);" class="nav-item" data-type="3">服装</a>
+                <a href="javascript:void(0);" class="nav-item" data-type="4">复古风</a>
+                <a href="javascript:void(0);" class="nav-item" data-type="5">设备</a>
+                <a href="javascript:void(0);" class="nav-item" data-type="6">居家用品</a>
+                <a href="javascript:void(0);" class="nav-item" data-type="7">土特产</a>
+                <a href="javascript:void(0);" class="nav-item">赠品</a>
+                <a href="javascript:void(0);" class="nav-item">清仓</a>
+            </div>
+            <div id="header-search" class="heard-item">
+                <div id="search">
+                    <input id="search-input" type="text">
+                    <div id="search-right">
+                        <span class="iconfont">&#xe6e6;</span>
+                    </div>
+<!--                    <a href="#">华为Mate Xs</a>-->
+<!--                    <a href="#" style="right: 65px;">小米9Pro 5G</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="homeSwiper">
+        <div class="container">
+            <div id="categoryList">
+                <ul id="category-list-main">
+                    <li>
+                        <a href="">手机外壳<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">球袜&nbsp;球鞋<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">手办<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">海报<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">足球<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">条幅&nbsp;主场<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">签名球衣<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">DVD<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">精美杯子<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                    <li>
+                        <a href="">游戏桌<span class="iconfont">&#xe676;</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="homeSwiper-container" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/swiper/swiper0.jpg" style="padding-left: 400px;padding-top: 20px;padding-right: 140px" alt="给我买!!!">
+                </div>
+<!--                <div class="swiper-slide">-->
+<!--                    <img src="../images/swiper/swiper2.jpg" alt="">-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <img src="../images/swiper/swiper3.jpg" alt="">-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <img src="../images/swiper/swiper4.jpg" alt="">-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <img src="../images/swiper/swiper5.jpg" alt="">-->
+<!--                </div>-->
+<!--                <div class="swiper-slide">-->
+<!--                    <img src="../images/swiper/swiper6.jpg" alt="">-->
+<!--                </div>-->
+            </div>
+            <div class="swiper-pagination"></div>
+            <!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
+
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <div id="commodity-main" style="padding-top: 80px">
+        <div class="container">
+            <div id="hot" class="container-item">
+                <h2 class="title">热销商品</h2>
+                <div class="content">
+
+                    <div class="content-item" id="good1" onmouseover="preAddCart(1)" onmouseout="cancelAddCart(1)">
+                        <img src="./images/hot/img1.png" width="150" height="150" alt="">
+                        <p class="grid-title">Pride in Battle引战必备</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥600</p>
+                        <img id="addBtn1">
+                    </div>
+
+                    <div class="content-item" id="good2" onmouseover="preAddCart(2)" onmouseout="cancelAddCart(2)">
+                        <img src="./images/hot/img2.png" width="150" height="150" alt="">
+                        <p class="grid-title">阿Kun正版签名球衣</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥6000</p>
+                        <img id="addBtn2">
+                    </div>
+                    <div class="content-item" id="good3" onmouseover="preAddCart(3)" onmouseout="cancelAddCart(3)">
+                        <img src="./images/hot/img3.png" width="150" height="150" alt="">
+                        <p class="grid-title">蓝月三叉戟实录</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥520</p>
+                        <img id="addBtn3">
+                    </div>
+                    <div class="content-item" id="good4" onmouseover="preAddCart(4)" onmouseout="cancelAddCart(4)">
+                        <img src="./images/hot/img4.png" width="150" height="150" alt="">
+                        <p class="grid-title">曼彻斯特城5号新星足球-白色</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥500</p>
+                        <img id="addBtn4">
+                    </div>
+                    <div class="content-item" id="good5" onmouseover="preAddCart(5)" onmouseout="cancelAddCart(5)">
+                        <img src="./images/hot/img5.png" width="150" height="150" alt="">
+                        <p class="grid-title">曼彻斯特城球衣2019-20-儿童</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥300</p>
+                        <img id="addBtn5">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-item" id="good6" onmouseover="preAddCart(6)" onmouseout="cancelAddCart(6)">
+                        <img src="./images/hot/img6.png" width="150" height="150" alt="">
+                        <p class="grid-title">曼彻斯特城市时尚手提包</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥1000</p>
+                        <img id="addBtn6">
+                    </div>
+                    <div class="content-item" id="good7" onmouseover="preAddCart(7)" onmouseout="cancelAddCart(7)">
+                        <img src="./images/hot/img7.png" width="150" height="150" alt="">
+                        <p class="grid-title">曼彻斯特市Pulse Double羽绒被</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥2000</p>
+                        <img id="addBtn7">
+                    </div>
+                    <div class="content-item" id="good8" onmouseover="preAddCart(8)" onmouseout="cancelAddCart(8)">
+                        <img src="./images/hot/img8.png" width="150" height="150" alt="">
+                        <p class="grid-title">曼彻斯特市卧室灯</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥100</p>
+                        <img id="addBtn8">
+                    </div>
+                    <div class="content-item" id="good9" onmouseover="preAddCart(9)" onmouseout="cancelAddCart(9)">
+                        <img src="./images/hot/img9.png" width="150" height="150" alt="">
+                        <p class="grid-title">曼城个性杯</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥150</p>
+                        <img id="addBtn9">
+                    </div>
+                    <div class="content-item" id="good10" onmouseover="preAddCart(10)" onmouseout="cancelAddCart(10)">
+                        <img src="./images/hot/img10.png" width="150" height="150" alt="">
+                        <p class="grid-title">渣男手办</p>
+                        <p class="grid-desc">预订首降230元 </p>
+                        <p class="grid-price">¥200</p>
+                        <img id="addBtn10">
+                    </div>
+                </div>
+            </div>
+<!--            <div id="recommend" class="container-item">-->
+<!--                <h2 class="title">精品推荐</h2>-->
+<!--                <div id="recommend-swip">-->
+<!--                    <div id="recommend-container"-->
+<!--                        class="swiper-container swiper-container-initialized swiper-container-horizontal">-->
+<!--                        <div class="swiper-wrapper">-->
+<!--                            <div class="swiper-slide">-->
+<!--                                <img width="150" height="150"-->
+<!--                                    src=""-->
+<!--                                    alt="">-->
+<!--                                <p class="grid-desc">预订最高优惠100元 </p>-->
+<!--                                <p class="grid-title"></p>-->
+<!--                                <p class="grid-price">¥5499</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; 如果需要导航按钮 &ndash;&gt;-->
+<!--                        <div class="swiper-button-prev"></div>-->
+<!--                        <div class="swiper-button-next"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+
+
+
+    <script src="./js/data.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+        window.onload = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET","http://47.114.153.37:9999/action/goods/indexVerify",true);
+            xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xhr.withCredentials = true;
+            xhr.send(null);
+            xhr.onreadystatechange = function (e) {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    if(data.opRes === "unauthorized"){}
+                    else{
+                        //修改用户名
+                        var cart = document.getElementById("userInfo_userName");
+                        cart.innerHTML = data.opRes;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

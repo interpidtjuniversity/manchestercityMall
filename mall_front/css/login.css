@@ -1,0 +1,71 @@
+body,p,div,ul,li,h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding: 0;
+}
+body{
+    /* background: #E9E9E9; */
+    background: url(../images/background.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+#login{
+    width: 400px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.5);
+    margin:200px auto;
+    position: relative;
+}
+#login h1{
+    text-align:center;
+    /* position:absolute;
+    left:120px;
+    top:-40px;
+    font-size:21px; */
+}
+#login form p{
+    text-align: center;
+}
+#user{
+    background:url(../images/user.png) rgba(0,0,0,.1) no-repeat;
+    width: 200px;
+    height: 30px;
+    border:solid #ccc 1px;
+    border-radius: 3px;
+    padding-left: 32px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+#pwd{
+    background: url(../images/pwd.png) rgba(0,0,0,.1) no-repeat;
+    width: 200px;
+    height: 30px;
+    border:solid #ccc 1px;
+    border-radius: 3px;
+    padding-left: 32px;
+    margin-bottom: 30px;
+}
+#register{
+    width: 232px;
+    height: 30px;
+    background: rgba(0,0,0,.1);
+    border:solid #ccc 1px;
+    border-radius: 3px;
+}
+#register:hover{
+    cursor: pointer;
+    background:#D8D8D8;
+}
+#signin{
+    width: 232px;
+    height: 30px;
+    background: rgba(0,0,0,.1);
+    border:solid #ccc 1px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+#signin:hover{
+    cursor: pointer;
+    background:#D8D8D8;
+}
+input::-webkit-input-placeholder{
+    color: rgba(0, 0, 0, 1);
+}
