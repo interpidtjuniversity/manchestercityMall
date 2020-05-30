@@ -3,7 +3,7 @@
 演示请戳 http://47.114.153.37:8080/
 
 
-用idea导入 mall_back
+用idea导入 mall_back 并配置redis
 
 用webstorm 或 vscode 导入 mall_front(页面一定要用ide的内置浏览器打开!!!这样才能看见端口!!!)
 
