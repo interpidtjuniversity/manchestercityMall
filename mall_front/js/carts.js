@@ -103,7 +103,7 @@ function cashIn() {
     orderString = "orders="+orderString+"";
     //发送ajax请求下单
     var xhr = new XMLHttpRequest();
-    xhr.open("POST","http://47.114.153.37:9999/action/order/saveOrders",true);
+    xhr.open("POST","http://localhost:9999/action/order/saveOrders",true);
     xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr.withCredentials = true;
     xhr.send(orderString);
@@ -124,7 +124,7 @@ function cashIn() {
     cart.innerHTML = "";
     //发送ajax清空购物车
     var xhr1 = new XMLHttpRequest();
-    xhr1.open("POST","http://47.114.153.37:9999/action/userCart/clearCart",true);
+    xhr1.open("POST","http://localhost:9999/action/userCart/clearCart",true);
     xhr1.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr1.withCredentials = true;
     xhr1.send(null);
@@ -143,7 +143,7 @@ function cashIn() {
 
 function getOrder() {
     var xhr1 = new XMLHttpRequest();
-    xhr1.open("GET","http://47.114.153.37:9999/action/order/getOrders",true);
+    xhr1.open("GET","http://localhost:9999/action/order/getOrders",true);
     xhr1.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xhr1.withCredentials = true;
     xhr1.send(null);
