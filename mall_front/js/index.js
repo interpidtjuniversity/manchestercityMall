@@ -177,7 +177,7 @@ function preAddCart(id) {
     addBtn.onclick = function(){
       //发送ajax请求
       var xhr = new XMLHttpRequest();
-      xhr.open("POST","http://47.114.153.37:9999/action/userCart/addCart",true);
+      xhr.open("POST","http://localhost:9999/action/userCart/addCart",true);
       xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
       var body = "goodId="+String(id);
       xhr.withCredentials = true;
@@ -222,7 +222,7 @@ function sleep (time) {
 function gotoCart() {
   //发送ajax请求
   var xhr = new XMLHttpRequest();
-  xhr.open("POST","http://47.114.153.37:9999/action/userCart/cartVerify",true);
+  xhr.open("POST","http://localhost:9999/action/userCart/cartVerify",true);
   xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   xhr.withCredentials = true;
   xhr.send(null);
@@ -243,7 +243,7 @@ function gotoCart() {
 function gotoOrder() {
   //发送ajax请求
   var xhr = new XMLHttpRequest();
-  xhr.open("POST","http://47.114.153.37:9999/action/order/orderVerify",true);
+  xhr.open("POST","http://localhost:9999/action/order/orderVerify",true);
   xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   xhr.withCredentials = true;
   xhr.send(null);
